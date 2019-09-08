@@ -22,5 +22,6 @@ Please give a detailed description of the issue you found.
 > - [anikinil](https://github.com/anikinil)
 
 <br/>
+<br/>
 
 **Made with :sparkling_heart: for you!**
