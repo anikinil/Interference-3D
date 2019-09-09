@@ -380,8 +380,8 @@ function updateWaveSourceCurtain() {
 
     waveSourceXEl.value = waveSources[selectedWaveSource - 1].x;
     waveSourceYEl.value = waveSources[selectedWaveSource - 1].y;
-    waveSourceXLbl2.innerText = round(waveSources[selectedWaveSource - 1].x, 2).toFixed(2);
-    waveSourceYLbl2.innerText = round(waveSources[selectedWaveSource - 1].y, 2).toFixed(2);
+    waveSourceXLbl2.innerText = round(waveSources[selectedWaveSource - 1].x * fieldSizeX, 2).toFixed(2) + ' UL';
+    waveSourceYLbl2.innerText = round(waveSources[selectedWaveSource - 1].y * fieldSizeY, 2).toFixed(2) + ' UL';
     waveSourceAmplMaxEl.value = waveSources[selectedWaveSource - 1].amplMax;
     waveSourceFrequencyEl.value = waveSources[selectedWaveSource - 1].f;
     waveSourcePhaseEl.value = waveSources[selectedWaveSource - 1].phase;
