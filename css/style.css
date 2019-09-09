@@ -1,0 +1,716 @@
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+
+.timePnl {
+    width: 200px;
+    height: 21px;
+    left: 50%;
+    margin-left: -100px;
+    margin-bottom: 20px;
+    bottom: 65px;
+    position: fixed;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    color: #7d7d7d; /* grey */
+    background-color: transparent;
+}
+
+
+.btns {
+    width: 156px;
+    height: 50px;
+    left: 50%;
+    margin-left: -80px;
+    bottom: 25px;
+    position: fixed;
+    background-color: transparent;
+}
+
+.btns .backToStartBtn {
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    color: #7d7d7d; /* grey */
+    background-color: transparent;
+    border: 2px solid #7d7d7d; /* grey */
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.btns .backToStartBtn:hover {
+    color: white;
+    background-color: #7d7d7d; /* grey */
+}
+
+.btns .backToStartBtn:focus {
+    outline: 0;
+}
+
+.btns .startPauseBtn {
+    width: 50px;
+    height: 50px;
+    left: 53px;
+    bottom: 0px;
+    position: absolute;
+    color: #4CAF50; /* green */
+    background-color: transparent;
+    border: 2px solid #4CAF50; /* green */
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.btns .startPauseBtn:hover {
+    color: white;
+    background-color: #4CAF50; /* green */
+}
+
+.btns .startPauseBtn:focus {
+    outline: 0;
+}
+
+.btns .slowerBtn {
+    width: 50px;
+    height: 50px;
+    left: 106px;
+    bottom: 0px;
+    position: absolute;
+    color: #ff751b; /* orange */
+    background-color: transparent;
+    border: 2px solid #ff751b; /* orange */
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.btns .slowerBtn:hover {
+    color: white;
+    background-color: #ff751b; /* orange */
+}
+
+.btns .slowerBtn:focus {
+    outline: 0;
+}
+
+
+.lightThemeLbl {
+    bottom: 22px;
+    right: 75px;
+    position: fixed;
+    color: #7d7d7d; /* grey */
+    font-family: "Century Gothic";
+}
+
+.lightThemeSwitch {
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.lightThemeSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.lightThemeSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7d7d7d; /* grey */
+    transition: .4s;
+}
+.lightThemeSlider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .lightThemeSlider {
+    background-color: #006bb3; /* blue */
+}
+input:focus + .lightThemeSlider {
+    box-shadow: 0 0 1px #2196F3; /* grey */
+}
+input:checked + .lightThemeSlider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+.waveSourcesCurtain {
+    height: 32px;
+    width: 30%;
+    position: fixed;
+    top: 0px;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.waveSourcesCurtain .waveSourcesCurtainBtn {
+    width: 150px;
+    height: 20px;
+    left: 50%;
+    margin-left: -75px;
+    bottom: 50%;
+    margin-bottom: -10px;
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    margin-top: 20%;
+    text-align: right;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    color: white;
+    overflow-y: auto;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content::-webkit-scrollbar {
+    width: 8px;
+}
+.waveSourcesCurtain .waveSourcesCurtain-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.waveSourcesCurtain .waveSourcesCurtain-content::-webkit-scrollbar-thumb {
+    background: #ff751b; /* orange */;
+}
+.waveSourcesCurtain .waveSourcesCurtain-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceLabel {
+    width: 150px;
+    height: 30px;
+    top: 5px;
+    left: 50%;
+    position: absolute;
+    margin-left: -75px;
+    text-align: center;
+    color: #ff751b; /* orange */
+    font-size: 18px;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .prevWaveSourceBtn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 5%;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 24px;
+    font-family: "Century Gothic";
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .prevWaveSourceBtn:focus {
+    outline: none;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .nextWaveSourceBtn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    right: 5%;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 24px;
+    font-family: "Century Gothic";
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .nextWaveSourceBtn:focus {
+    outline: none;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceXLbl1 {
+    width: 20%;
+    height: 21px;
+    right: 73%;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceX {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 14px;
+  right: 50%;
+  position: relative;
+  margin-right: -20%;
+  background: transparent;
+  border: 2px solid #ff751b; /* orange */
+  outline: none;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceX::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 21px;
+  height: 21px;
+  background: white;
+  cursor: pointer;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceXLbl2 {
+    height: 21px;
+    /* top: 100px; */
+    left: 72%;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceYLbl1 {
+    height: 21px;
+    /* top: 140px; */
+    right: 73%;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceY {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 14px;
+  right: 50%;
+  position: relative;
+  margin-right: -20%;
+  background: transparent;
+  border: 2px solid #ff751b;
+  outline: none;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceY::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 21px;
+  height: 21px;
+  background: white;
+  cursor: pointer;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceYLbl2 {
+    height: 21px;
+    /* top: 140px; */
+    left: 72%;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceAmplMax {
+    width: 15%;
+    margin-right: 33%;
+    margin-left: 5px;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #ff751b; /* orange */
+    transition: 0.3s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceAmplMax:focus {
+    outline: 0;
+    background-color: #ff751b; /* orange */
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceAmplMax::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceAmplMaxUnit {
+    width: 30px;
+    right: 33%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceFrequency {
+    width: 15%;
+    margin-right: 33%;
+    margin-left: 5px;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #ff751b; /* orange */
+    transition: 0.3s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceFrequency:focus {
+    outline: 0;
+    background-color: #ff751b; /* orange */
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceFrequency::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceFrequencyUnit {
+    width: 30px;
+    right: 33%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourcePhase {
+    width: 15%;
+    margin-right: 33%;
+    margin-left: 5px;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #ff751b; /* orange */
+    transition: 0.3s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourcePhase:focus {
+    outline: 0;
+    background-color: #ff751b; /* orange */
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourcePhase::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourcePhaseUnit {
+    width: 30px;
+    right: 33%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceRmvBtn {
+    width: 70px;
+    height: 35px;
+    left: 50%;
+    position: absolute;
+    margin-left: -5%;
+    color: #ff751b; /* orange */
+    background-color: transparent;
+    border: 2px solid #ff751b; /* orange */
+    font-size: 14px;
+    font-family: "Century Gothic";
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceRmvBtn:hover {
+    color: white;
+    background-color: #ff751b; /* orange */
+}
+
+.waveSourcesCurtain .waveSourcesCurtain-content .waveSourceRmvBtn:focus {
+    outline: 0;
+}
+
+
+.fieldCurtain {
+    height: 32px;
+    width: 20%;
+    position: fixed;
+    top: 0px;
+    right: 5%;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+
+.fieldCurtain .fieldCurtainBtn {
+    width: 150px;
+    height: 20px;
+    left: 50%;
+    margin-left: -75px;
+    bottom: 50%;
+    margin-bottom: -10px;
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Century Gothic";
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fieldCurtain .fieldCurtain-content {
+    top: 50px;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    margin-top: 20%;
+    text-align: right;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    color: white;
+    overflow-y: auto;
+}
+
+.fieldCurtain .fieldCurtain-content::-webkit-scrollbar {
+    width: 8px;
+}
+.fieldCurtain .fieldCurtain-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+.fieldCurtain .fieldCurtain-content::-webkit-scrollbar-thumb {
+    background: #006bb3; /* blue */
+}
+.fieldCurtain .fieldCurtain-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.fieldCurtain .fieldCurtain-content .fieldSizeX {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeX:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeX::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeXUnit {
+    width: 30px;
+    right: 25%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+.fieldCurtain .fieldCurtain-content .fieldSizeY {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeY:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeY::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.fieldCurtain .fieldCurtain-content .fieldSizeYUnit {
+    width: 30px;
+    right: 25%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+
+.fieldCurtain .fieldCurtain-content .waveVelocity {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .waveVelocity:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .waveVelocity::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.fieldCurtain .fieldCurtain-content .waveVelocityUnit {
+    width: 30px;
+    right: 25%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+
+.fieldCurtain .fieldCurtain-content .time {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .time:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .time::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+.fieldCurtain .fieldCurtain-content .timeUnit {
+    width: 30px;
+    right: 25%;
+    position: absolute;
+    margin-right: -35px;
+    text-align: left;
+}
+
+
+.fieldCurtain .fieldCurtain-content .segmentsX {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .segmentsX:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .segmentsX::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
+
+
+.fieldCurtain .fieldCurtain-content .segmentsY {
+    width: 20%;
+    margin-right: 25%;
+    padding-left: 2px;
+    color: white;
+    font-size: 14px;
+    font-family: "Century Gothic";
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #006bb3; /* blue */
+    transition: 0.3s;
+}
+
+.fieldCurtain .fieldCurtain-content .segmentsY:focus {
+    outline: 0;
+    background-color: #006bb3; /* blue */
+}
+
+.fieldCurtain .fieldCurtain-content .segmentsY::selection {
+    color:  #262626; /* dark grey */
+    background-color: transparent;
+}
