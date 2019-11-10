@@ -3,7 +3,7 @@ A simple 3D simulation of waves propagating and interfering on a flat surface. (
 
 ## Installation 
 To install this software you only need to download the repo and to run the **index.html** file on your browser. <br>
-To launch the simulation without downloading any files just follow this link: https://anikinil.github.io/Interference3D/
+To launch the simulation without downloading any files just use this link: https://anikinil.github.io/Interference3D/
 
 ## Usage
 The program provides you with a **field** which the waves are simulated on. <br>
