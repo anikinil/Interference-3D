@@ -1,4 +1,6 @@
 
+///////////////////////////////
+
 //// Variables and Objects ////
 
 var timePnlEl = document.getElementById("timePnl");
